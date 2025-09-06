@@ -16,6 +16,12 @@
     --edit: #1976D2;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background-color: var(--background);
@@ -23,6 +29,7 @@ body {
     transition: all 0.3s ease;
     margin: 0;
     padding: 20px;
+    min-height: 100vh;
 }
 
 .container {
@@ -38,12 +45,18 @@ body {
     right: 20px;
     cursor: pointer;
     font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
 }
 
 h1 {
     text-align: center;
     color: var(--primary);
     margin-bottom: 30px;
+    font-size: 2.5rem;
 }
 
 .todo-input {
@@ -55,10 +68,17 @@ h1 {
 input[type="text"] {
     flex: 1;
     padding: 12px;
-    border: none;
+    border: 2px solid transparent;
     border-radius: 5px;
     background-color: var(--secondary);
     color: var(--text);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary);
 }
 
 button {
@@ -68,11 +88,16 @@ button {
     background-color: var(--primary);
     color: white;
     cursor: pointer;
-    transition: opacity 0.3s;
+    transition: all 0.3s ease;
 }
 
 button:hover {
     opacity: 0.9;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
 }
 
 #todoList {
@@ -88,11 +113,13 @@ button:hover {
     border-radius: 5px;
     margin-bottom: 10px;
     animation: slideIn 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .todo-text {
     flex: 1;
     margin: 0 15px;
+    word-break: break-word;
 }
 
 .todo-actions {
@@ -116,5 +143,24 @@ button:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .todo-actions {
+        gap: 5px;
+    }
+    
+    button {
+        padding: 10px 15px;
     }
 }
