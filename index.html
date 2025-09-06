@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern To-Do List</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Example: FontAwesome for icons -->
-  <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Todo List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1><i class="fas fa-list-check"></i> To-Do List</h1>
-    <button id="theme-toggle"><i class="fas fa-moon"></i></button>
-  </header>
-  <main>
-    <form id="task-form">
-      <input type="text" id="new-task" placeholder="Add a new task..." required />
-      <button type="submit"><i class="fas fa-plus"></i></button>
-    </form>
-    <ul id="tasks"></ul>
-  </main>
-  <script src="script.js"></script>
+    <div class="container">
+        <div class="theme-toggle">
+            <i class="fas fa-moon" id="theme-toggle-icon"></i>
+        </div>
+        <h1>Todo List</h1>
+        <div class="todo-input">
+            <input type="text" id="todoInput" placeholder="Add a new task...">
+            <button id="addBtn"><i class="fas fa-plus"></i></button>
+        </div>
+        <ul id="todoList"></ul>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
